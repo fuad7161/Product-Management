@@ -1,0 +1,60 @@
+<h1 *ngIf="!valueAsce; else editTemplate">Add Product!</h1>
+<ng-template #editTemplate>
+    <h1>Edit Product</h1>
+</ng-template>
+<button class="home-button" [routerLink]="['/home']">Home</button>
+
+<div class="card">
+    <h1 *ngIf="!valueAsce; else editTemplate">Add Product!</h1>
+  <ng-template #editTemplate>
+    <h1>Edit Product</h1>
+    </ng-template>
+    <form [formGroup]="userForm">
+        <div class="form-group">
+            <label class="form-label">Product Name</label>
+            <input type="text" class="form-control" formControlName="productName">
+            <div class="text-danger" *ngIf="userForm.controls['productName'].invalid && (isFormSubmitted || userForm.controls['productName'].touched || userForm.controls['productName'].dirty)">
+               <span *ngIf="userForm.controls['productName'].errors?.['required']">This Is Required</span>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label class="form-label">Category Select</label>
+            <select class="form-select" formControlName="catagory">
+                <option selected disabled value="">Choose...</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Apparel">Apparel</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Products">Products</option>
+                <option value="Home Decor">Home Decor</option>
+            </select>
+        </div>
+  
+        <div class="form-group">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" formControlName="price">
+        </div>
+  
+        <div class="form-group">
+            <label class="form-label">Description</label>
+            <input type="text" class="form-control" formControlName="description">
+            <div class="text-danger" *ngIf="userForm.controls['description'].invalid && (userForm.controls['description'].touched || userForm.controls['description'].dirty)">
+                <span *ngIf="userForm.controls['description'].errors?.['required']"> This Is Required </span>
+                <span *ngIf="userForm.controls['description'].errors?.['minlength']"> Min 4 Characters Required </span>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label class="form-label">Quantity</label>
+            <input type="number" class="form-control" formControlName="quantity">
+        </div>
+  
+        <div class="form-group">
+            <label class="form-label">Item Create Date</label>
+            <input type="date" class="form-control" formControlName="datepeacker">
+        </div>
+  
+        <button class="btn btn-primary" type="button" (click)="onSubmit()">Submit Form</button>
+    </form>
+
+</div>

@@ -19,7 +19,7 @@ npm -v
 ## Installing Angular CLI
 
 ```
-ng new my-angular-app
+npm install -g @angular/cli
 ```
 
 ## Create project folder and Initialize angular
@@ -53,3 +53,33 @@ rxjs                            7.8.1
 typescript                      5.5.4
 zone.js                         0.14.10
 ```
+
+## Some Feature of my Project
+
+<h1 align="center">This is the Initial Page. When Project run</h1>
+
+![](./dam/startPage.png)
+
+<h1 align="center">Add new Product page</h1>
+
+![](./dam/addProduct.png)
+
+<h1 align="center">Edit the existing product</h1>
+
+![](./dam/editPage.png)
+<h1 align="center">Alert After adding new Product</h1>
+
+![](./dam/notifyAfterAddingProduct.png)
+<h1 align="center">Deleted Product</h1>
+
+
+![](./dam/productDeleted.png)
+<h1 align="center">Product List Page</h1>
+
+
+![](./dam/productListPage.png)
+<h1 align="center">Search By product List</h1>
+
+![](./dam/searchResult.png)
+
+
